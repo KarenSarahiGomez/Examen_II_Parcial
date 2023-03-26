@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Examen_II_LP3_KSGG
@@ -15,6 +8,27 @@ namespace Examen_II_LP3_KSGG
         public Menu()
         {
             InitializeComponent();
+        }
+
+        private void UsuariosToolStripButton1_Click(object sender, EventArgs e)
+        {
+            UsuarioForm userForm = new UsuarioForm();
+            userForm.MdiParent = this;
+            userForm.Show();
+        }
+
+        private void ClientesToolStripButton1_Click(object sender, EventArgs e)
+        {
+            ClienteForm clienteForm = new ClienteForm();
+            clienteForm.MdiParent = this;
+            clienteForm.Show();
+        }
+
+        private void TicketsToolStripButton2_Click(object sender, EventArgs e)
+        {
+            TicketsForm ticketForm = new TicketsForm();
+            ticketForm.MdiParent = this;
+            ticketForm.Show();
         }
     }
 }

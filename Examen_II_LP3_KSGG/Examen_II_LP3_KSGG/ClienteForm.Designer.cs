@@ -245,6 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(893, 489);
             this.Controls.Add(this.ClientesDataGridView);
             this.Controls.Add(this.CancelarButton);

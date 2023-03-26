@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Entidades;
+using System;
 using System.Windows.Forms;
 
 namespace Examen_II_LP3_KSGG
@@ -33,19 +35,44 @@ namespace Examen_II_LP3_KSGG
         }
 
 
-        //Validar la base de datos 
 
+        //Validar la base de datos
+        Login login = new Login();
+        Usuario usuario = new Usuario();
+        UsuarioDB usuarioDB = new UsuarioDB();
 
-        private void Mostrarbutton_Click(object sender, EventArgs e)
+        usuario = usuarioDB.Autenticar(login);
+
+        if (usuario != null)
         {
-            if (ContraseñatextBox.PasswordChar == '*')
+            if (Usuario.EstaActivo)
             {
-                ContraseñatextBox.PasswordChar = '\0';
-            }
-            else
-            {
-                ContraseñatextBox.PasswordChar = '*';
-            }
-        }
+                 Menu menuFormulario = new Menu();
+        Hide();
+        menuFormulario.Show();
+                }
+                 else
+                { 
+                     MessageBox.Show("El usuario no esta activo, "Error", MessageButtons.Ok, MessageBoxIcon.Error");
+
+                }
+             else
+{
+    MessageBox.Show("Datos de usuario incorrectos, "Error", MessageButtons.Ok, MessageBoxIcon.Error");
+}
+
+
+
+private void Mostrarbutton_Click(object sender, EventArgs e)
+{
+    if (ContraseñatextBox.PasswordChar == '*')
+    {
+        ContraseñatextBox.PasswordChar = '\0';
+    }
+    else
+    {
+        ContraseñatextBox.PasswordChar = '*';
+    }
+}
     }
 }
